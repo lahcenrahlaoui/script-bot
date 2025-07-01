@@ -1,5 +1,7 @@
-"use strict";
 
+(function() {
+"use strict";
+ 
 // =====================================
 // DOMAIN VALIDATION & CONFIGURATION
 // =====================================
@@ -547,3 +549,5 @@ if (document.readyState === "loading") {
 } else {
   ChatBot.init();
 }
+
+})();
