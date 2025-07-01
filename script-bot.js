@@ -4,11 +4,8 @@
 // DOMAIN VALIDATION & CONFIGURATION
 // =====================================
 const ChatBotConfig = {
-  allowedDomains: [
-    atob("bG9jYWxob3N0"),
-    atob("ZXhhbXBsZS5jb20="),
-    atob("YW5vdGhlcmRvbWFpbi5jb20="),
-  ],
+ allowedDomains: ["*"]
+
   responses: [
     "That's fascinating! Tell me more.",
     "I understand. How can I help further?",
