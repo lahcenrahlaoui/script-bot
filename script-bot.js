@@ -4,7 +4,7 @@
 // DOMAIN VALIDATION & CONFIGURATION
 // =====================================
 const ChatBotConfig = {
- allowedDomains: ["*"]
+ allowedDomains: ["*"],
 
   responses: [
     "That's fascinating! Tell me more.",
