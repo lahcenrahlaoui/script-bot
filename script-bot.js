@@ -524,10 +524,10 @@ const ChatBotEventHandlers = {
 // =====================================
 const ChatBot = {
   init() {
-    if (!ChatBotConfig.allowedDomains.includes(location.hostname)) {
-      console.warn("[CHAT BOT] Access denied for:", location.hostname);
-      return;
-    }
+    // if (!ChatBotConfig.allowedDomains.includes(location.hostname)) {
+    //   console.warn("[CHAT BOT] Access denied for:", location.hostname);
+    //   return;
+    // }
 
     if (ChatBotState.isActive) return;
 
