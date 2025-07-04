@@ -1,5 +1,19 @@
 "use strict";
 
+// add this function we wiil use it to fix the (sendBtn.addEventListener("click", () => MessageHandler.send());) by telegram:@Yousfi_Abdelkader
+function throttle(fn, delay) {
+  let lastCall = 0;
+  return function (...args) {
+    const now = Date.now();
+    if (now - lastCall >= delay) {
+      lastCall = now;
+      return fn(...args);
+    }
+  };
+}
+
+
+
 // =====================================
 // DOMAIN VALIDATION & CONFIGURATION
 // =====================================
@@ -502,10 +516,12 @@ const ChatBotEventHandlers = {
     const camBtn = bot.querySelector(".cam-btn");
 
     // Message handling
-    sendBtn.addEventListener("click", () => MessageHandler.send());
-    input.addEventListener("keypress", (e) => {
-      if (e.key === "Enter") MessageHandler.send();
-    });
+const throttledSend = throttle(() => MessageHandler.send(), 1000);
+sendBtn.addEventListener("click", throttledSend);
+input.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") throttledSend();
+});
+
 
     // Media controls
     micBtn.addEventListener("click", () => MediaControls.toggleMic());
